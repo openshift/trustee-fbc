@@ -1,0 +1,17 @@
+name: trustee-operator
+repository: quay.io/redhat-user-workloads/ose-osc-tenant/trustee/trustee-operator-bundle
+konflux:
+  namespace: trustee
+  prefix: trustee-fbc
+  github: jensfr/trustee-fbc
+ocp:
+  - v4.16
+replacements:
+#  - from: brew.registry.redhat.io/rh-osbs/trustee-rhel9-operator-bundle
+#  to: registry.redhat.io/trustee/-operator-bundle
+#- from: brew.registry.redhat.io/rh-osbs/trustee-rhel9-operator
+#  to: registry.redhat.io/trustee/-rhel9-operator
+#- from: brew.registry.redhat.io/rh-osbs/trustee-openshift-rhel9
+#  to: registry.redhat.io/trustee/-rhel9
+bundles: []
+  - sha256:98f60886849d79841e9d806cfb9c49a9ad0517ba0a040dd752fbbf027e6fa8f9
