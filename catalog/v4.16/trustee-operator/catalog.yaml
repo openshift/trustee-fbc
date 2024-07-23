@@ -1,0 +1,12 @@
+schema: olm.template.basic
+entries:
+  - schema: olm.package
+    name: trustee-operator
+    defaultChannel: stable
+  - schema: olm.channel
+    package: trustee-operator
+    name: stable
+    entries:
+      - name: trustee-operator.v0.1.0
+  - schema: olm.bundle
+    image: quay.io/redhat-user-workloads/ose-osc-tenant/trustee/trustee-operator-bundle@sha256:98f60886849d79841e9d806cfb9c49a9ad0517ba0a040dd752fbbf027e6fa8f9
