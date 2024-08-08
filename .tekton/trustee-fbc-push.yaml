@@ -27,6 +27,8 @@ spec:
     value: catalog/v4.16
   - name: dockerfile
     value: catalog/v4.16/Dockerfile
+  - name: build-source-image
+    value: "true"
   pipelineSpec:
     finally:
     - name: show-sbom
