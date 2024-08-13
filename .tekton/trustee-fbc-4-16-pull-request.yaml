@@ -26,6 +26,8 @@ spec:
     value: quay.io/redhat-user-workloads/ose-osc-tenant/trustee-fbc/trustee-fbc-4-16:on-pr-{{revision}}
   - name: image-expires-after
     value: 5d
+  - name: path-context
+    value: catalog/v4.16
   - name: dockerfile
     value: catalog/v4.16/Dockerfile
   pipelineSpec:
