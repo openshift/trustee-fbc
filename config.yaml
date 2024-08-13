@@ -3,7 +3,7 @@ repository: quay.io/redhat-user-workloads/ose-osc-tenant/trustee/trustee-operato
 konflux:
   namespace: trustee
   prefix: trustee-fbc
-  github: jensfr/trustee-fbc
+  github: openshift/trustee-fbc
 ocp:
   - v4.16
 replacements:
