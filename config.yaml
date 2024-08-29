@@ -1,5 +1,5 @@
 name: trustee-operator
-repository: quay.io/redhat-user-workloads/ose-osc-tenant/trustee/trustee-operator-bundle
+repository: registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-operator-bundle
 konflux:
   namespace: trustee
   prefix: trustee-fbc
