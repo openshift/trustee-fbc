@@ -17,7 +17,7 @@
     "schema": "olm.bundle",
     "name": "trustee-operator.v0.1.0",
     "package": "trustee-operator",
-    "image": "quay.io/redhat-user-workloads/ose-osc-tenant/trustee/trustee-operator-bundle@sha256:97b4d4d3021e957d087e3d11d68a86d63c8a83e497d480fe46af8b77fce2768b",
+    "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-operator-bundle@sha256:97b4d4d3021e957d087e3d11d68a86d63c8a83e497d480fe46af8b77fce2768b",
     "properties": [
         {
             "type": "olm.gvk",
@@ -102,11 +102,11 @@
         },
         {
             "name": "",
-            "image": "quay.io/redhat-user-workloads/ose-osc-tenant/trustee/trustee-operator-bundle@sha256:97b4d4d3021e957d087e3d11d68a86d63c8a83e497d480fe46af8b77fce2768b"
+            "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-operator-bundle@sha256:97b4d4d3021e957d087e3d11d68a86d63c8a83e497d480fe46af8b77fce2768b"
         },
         {
             "name": "",
-            "image": "quay.io/redhat-user-workloads/ose-osc-tenant/trustee/trustee-operator@sha256:e09062c2cbceac82d30e13ffbaaebadbeddaaed5ed250c6fe13e3766a165e34c"
+            "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-rhel9-operator@sha256:e09062c2cbceac82d30e13ffbaaebadbeddaaed5ed250c6fe13e3766a165e34c"
         }
     ]
 }
