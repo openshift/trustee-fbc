@@ -21,9 +21,9 @@ Download the binary from [Github releases](https://github.com/operator-framework
 
 In examples that follow, the latest release is `v4.16` and you want to release for `v4.17` too.
 
-### New Konflux component
+### New Konflux application
 
-You can add a new component from the web UI.
+Add a new application and a new component from the web UI.
 
 ### New PipelineRuns
 
