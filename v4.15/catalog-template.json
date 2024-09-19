@@ -1,0 +1,24 @@
+{
+    "entries": [
+        {
+            "defaultChannel": "stable",
+            "name": "trustee-operator",
+            "schema": "olm.package"
+        },
+        {
+            "entries": [
+                {
+                    "name": "trustee-operator.v0.1.0"
+                }
+            ],
+            "name": "stable",
+            "package": "trustee-operator",
+            "schema": "olm.channel"
+        },
+        {
+            "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-operator-bundle@sha256:d8f79859acd837469d4d259c5617645ec2ed31cacf4071c1b19c4600b7092da5",
+            "schema": "olm.bundle"
+        }
+    ],
+    "schema": "olm.template.basic"
+}
