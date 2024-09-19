@@ -8,6 +8,8 @@ RELEASE_REGISTRY="registry.redhat.io/confidential-compute-attestation-tech-previ
 
 for OCP_VERSION in v4.*
 do
+    # A blank line in the log
+    echo
     # Switch to the build registry, so `opm` can pull freely.
     sed -i "s|$RELEASE_REGISTRY|$BUILD_REGISTRY|" $OCP_VERSION/catalog-template.json
     # Render that template. It's what we're here for.

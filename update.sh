@@ -3,6 +3,12 @@
 # Print what you're doing, exit on error.
 set -xe
 
+# Which OCP version are we running this for.
+VERSION="$1"
+
+# Check that a folder exists for the version you set.
+ls "$VERSION" > /dev/null
+
 # Get the latest commit for the bundle. This is the string the bundle image is tagged with.
 get_tag () {
     URL="https://api.github.com/repos/openshift/trustee-operator/commits?per_page=1&path=bundle"
@@ -26,7 +32,7 @@ replace_digest () {
 
 TAG="$(get_tag)"
 DIGEST="$(get_digest $TAG)"
-FILE="v4.16/catalog-template.json"
+FILE="$VERSION/catalog-template.json"
 replace_digest "$DIGEST" "$FILE"
 
 # No more debug. All went good.

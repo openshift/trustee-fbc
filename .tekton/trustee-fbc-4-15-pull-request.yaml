@@ -4,18 +4,19 @@ metadata:
   annotations:
     build.appstudio.openshift.io/repo: https://github.com/openshift/trustee-fbc?rev={{revision}}
     build.appstudio.redhat.com/commit_sha: '{{revision}}'
+    build.appstudio.redhat.com/pull_request_number: '{{pull_request_number}}'
     build.appstudio.redhat.com/target_branch: '{{target_branch}}'
     pipelinesascode.tekton.dev/max-keep-runs: "3"
     pipelinesascode.tekton.dev/on-cel-expression:
-      event == "push" &&
+      event == "pull_request" &&
       target_branch == "main" &&
-      files.all.exists(path, path.matches('.tekton/pipeline.yaml$|.tekton/trustee-fbc-4-16-.*.yaml$|v4.16/Dockerfile$|v4.16/.*/catalog.json$'))
+      files.all.exists(path, path.matches('.tekton/pipeline.yaml$|.tekton/trustee-fbc-4-15-.*.yaml$|v4.15/Dockerfile$|v4.15/.*/catalog.json$'))
   creationTimestamp: null
   labels:
     appstudio.openshift.io/application: trustee-fbc
-    appstudio.openshift.io/component: trustee-fbc-4-16
+    appstudio.openshift.io/component: trustee-fbc-4-15
     pipelines.appstudio.openshift.io/type: build
-  name: trustee-fbc-4-16-on-push
+  name: trustee-fbc-4-15-on-pull-request
   namespace: ose-osc-tenant
 spec:
   params:
@@ -24,11 +25,13 @@ spec:
   - name: revision
     value: '{{revision}}'
   - name: output-image
-    value: quay.io/redhat-user-workloads/ose-osc-tenant/trustee-fbc/trustee-fbc-4-16:{{revision}}
+    value: quay.io/redhat-user-workloads/ose-osc-tenant/trustee-fbc/trustee-fbc-4-15:on-pr-{{revision}}
+  - name: image-expires-after
+    value: 5d
   - name: path-context
-    value: v4.16
+    value: v4.15
   - name: dockerfile
-    value: v4.16/Dockerfile
+    value: v4.15/Dockerfile
   - name: build-platforms
     value:
       - linux/x86_64
