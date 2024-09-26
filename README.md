@@ -23,7 +23,10 @@ In examples that follow, the latest release is `v4.16` and you want to release f
 
 ### New Konflux application
 
-Add a new application and a new component from the web UI.
+1. In the web UI, add a new application and a new component.
+1. Ignore the pull request from the Konflux bot.
+1. Add the new application to the ReleasePlanAdmission.
+1. Create a new ReleasePlan.
 
 ### New PipelineRuns
 
