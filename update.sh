@@ -9,10 +9,15 @@ VERSION="$1"
 # Check that a folder exists for the version you set.
 ls "$VERSION" > /dev/null
 
-# Get the latest commit for the bundle. This is the string the bundle image is tagged with.
+# Make script fail when API requests fail.
+alias curl="curl --fail"
+
+# Get the latest merge commit for the bundle. This is the string the bundle image is tagged with.
 get_tag () {
     URL="https://api.github.com/repos/openshift/trustee-operator/commits?per_page=1&path=bundle"
-    curl "$URL" | jq -r '.[0].sha'
+    COMMIT=$(curl "$URL" | jq -r '.[0].sha')
+    URL="https://api.github.com/repos/openshift/trustee-operator/commits/$COMMIT/pulls"
+    curl "$URL" | jq -r '.[0].merge_commit_sha'
 }
 
 # Get the digest for a tagged image. Pass the <TAG> as the first argument.
