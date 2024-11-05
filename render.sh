@@ -12,8 +12,17 @@ do
     echo
     # Switch to the build registry, so `opm` can pull freely.
     sed -i "s|$RELEASE_REGISTRY|$BUILD_REGISTRY|" $OCP_VERSION/catalog-template.json
+
+    # enable migrate params for OCP 4.17 and onwards
+    OCP_VERSION_NUMERAL=$(echo $OCP_VERSION | grep -o -E '[0-9.]+')
+    if [ "`echo "${OCP_VERSION_NUMERAL} > 4.16" | bc`" -eq 1 ]; then
+        MIGRATE_PARAM="--migrate-level bundle-object-to-csv-metadata"
+    else
+        MIGRATE_PARAM=""
+    fi
+
     # Render that template. It's what we're here for.
-    opm alpha render-template basic $OCP_VERSION/catalog-template.json > $OCP_VERSION/catalog/trustee-operator/catalog.json
+    opm $MIGRATE_PARAM alpha render-template basic $OCP_VERSION/catalog-template.json > $OCP_VERSION/catalog/trustee-operator/catalog.json
     # Switch back to the release registry.
     sed -i "s|$BUILD_REGISTRY|$RELEASE_REGISTRY|" $OCP_VERSION/catalog-template.json
     sed -i "s|$BUILD_REGISTRY|$RELEASE_REGISTRY|" $OCP_VERSION/catalog/trustee-operator/catalog.json
