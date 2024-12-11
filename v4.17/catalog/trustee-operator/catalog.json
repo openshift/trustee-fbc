@@ -9,15 +9,15 @@
     "package": "trustee-operator",
     "entries": [
         {
-            "name": "trustee-operator.v0.1.0"
+            "name": "trustee-operator.v0.2.0"
         }
     ]
 }
 {
     "schema": "olm.bundle",
-    "name": "trustee-operator.v0.1.0",
+    "name": "trustee-operator.v0.2.0",
     "package": "trustee-operator",
-    "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-operator-bundle@sha256:6ac8c6158f093acd2ff7edd39f1e28788b78f91ee83bb36763d21990276034a0",
+    "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-operator-bundle@sha256:eae492991f42827fed2019bb5397416c6de681761ab75ff87d9a3cb0d223cbb9",
     "properties": [
         {
             "type": "olm.gvk",
@@ -31,7 +31,7 @@
             "type": "olm.package",
             "value": {
                 "packageName": "trustee-operator",
-                "version": "0.1.0"
+                "version": "0.2.0"
             }
         },
         {
@@ -41,7 +41,7 @@
                     "alm-examples": "[]",
                     "capabilities": "Basic Install",
                     "categories": "Security",
-                    "containerImage": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-rhel9-operator@sha256:3dde530418ef436113e7d431067367a98faf7e171edca1f4c55eda2bb34f9618",
+                    "containerImage": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-rhel9-operator@sha256:f1993107608a1ca9494d6d8cdbf3dc86274f999319511dc69163c404e45cc7fe",
                     "createdAt": "2024-06-07T10:06:06Z",
                     "features.operators.openshift.io/cnf": "false",
                     "features.operators.openshift.io/cni": "false",
@@ -55,9 +55,10 @@
                     "features.operators.openshift.io/token-auth-gcp": "false",
                     "operatorframework.io/suggested-namespace": "trustee-operator-system",
                     "operators.openshift.io/valid-subscription": "[\"OpenShift Container Platform\", \"OpenShift Platform Plus\"]",
-                    "operators.operatorframework.io/builder": "operator-sdk-v1.33.0",
+                    "operators.operatorframework.io/builder": "operator-sdk-v1.36.1",
                     "operators.operatorframework.io/project_layout": "go.kubebuilder.io/v4",
-                    "repository": "https://github.com/openshift/trustee-operator"
+                    "repository": "https://github.com/openshift/trustee-operator",
+                    "support": "Confidential Containers Community"
                 },
                 "apiServiceDefinitions": {},
                 "crdDescriptions": {
@@ -123,11 +124,11 @@
     "relatedImages": [
         {
             "name": "",
-            "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-operator-bundle@sha256:6ac8c6158f093acd2ff7edd39f1e28788b78f91ee83bb36763d21990276034a0"
+            "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-operator-bundle@sha256:eae492991f42827fed2019bb5397416c6de681761ab75ff87d9a3cb0d223cbb9"
         },
         {
             "name": "",
-            "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-rhel9-operator@sha256:3dde530418ef436113e7d431067367a98faf7e171edca1f4c55eda2bb34f9618"
+            "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-rhel9-operator@sha256:f1993107608a1ca9494d6d8cdbf3dc86274f999319511dc69163c404e45cc7fe"
         },
         {
             "name": "",
