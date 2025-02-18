@@ -37,7 +37,14 @@ spec:
       - linux/x86_64
       - linux/s390x
   pipelineRef:
-    name: build-pipeline
+    resolver: bundles
+    params:
+    - name: name
+      value: fbc-builder
+    - name: bundle
+      value: quay.io/konflux-ci/tekton-catalog/pipeline-fbc-builder:devel@sha256:a79be6928dd4ef27d2c21f634bd2f4a0e412d17b8b61246139e5be6bf0777161
+    - name: kind
+      value: pipeline
   taskRunTemplate: {}
   workspaces:
   - name: workspace
