@@ -9,15 +9,15 @@
     "package": "trustee-operator",
     "entries": [
         {
-            "name": "trustee-operator.v0.2.0"
+            "name": "trustee-operator.v0.3.0"
         }
     ]
 }
 {
     "schema": "olm.bundle",
-    "name": "trustee-operator.v0.2.0",
+    "name": "trustee-operator.v0.3.0",
     "package": "trustee-operator",
-    "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-operator-bundle@sha256:feeaea826bc325d452f9ee1283cdbef4795c672296aa752eb353a1d7a618a767",
+    "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-operator-bundle@sha256:207a641a339791989b02c248be26b6a5fbbb7f646e687026fb52e38e8d618a50",
     "properties": [
         {
             "type": "olm.gvk",
@@ -31,7 +31,7 @@
             "type": "olm.package",
             "value": {
                 "packageName": "trustee-operator",
-                "version": "0.2.0"
+                "version": "0.3.0"
             }
         },
         {
@@ -41,7 +41,7 @@
                     "alm-examples": "[]",
                     "capabilities": "Basic Install",
                     "categories": "Security",
-                    "containerImage": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-rhel9-operator@sha256:3cbd7eef2943bc120765c22d8314e0c5e777dbb310ba58a62910b04676a5d03b",
+                    "containerImage": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-rhel9-operator@sha256:de3c7ae5b75708aea57ab8f11208e7cba987bed9ef3ee40df25e40bf58c4be05",
                     "createdAt": "2024-06-07T10:06:06Z",
                     "features.operators.openshift.io/cnf": "false",
                     "features.operators.openshift.io/cni": "false",
@@ -73,7 +73,7 @@
                     ]
                 },
                 "description": "Remote attestation operator for confidential containers",
-                "displayName": "confidential compute attestation",
+                "displayName": "Red Hat build of Trustee",
                 "installModes": [
                     {
                         "type": "OwnNamespace",
@@ -104,7 +104,7 @@
                 },
                 "links": [
                     {
-                        "name": "confidential compute attestation",
+                        "name": "Red Hat build of Trustee",
                         "url": "https://github.com/openshift/trustee-operator"
                     }
                 ],
@@ -116,7 +116,8 @@
                 ],
                 "maturity": "beta",
                 "provider": {
-                    "name": "Red Hat"
+                    "name": "Red Hat",
+                    "url": "https://github.com/confidential-containers"
                 }
             }
         }
@@ -124,15 +125,11 @@
     "relatedImages": [
         {
             "name": "",
-            "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-operator-bundle@sha256:feeaea826bc325d452f9ee1283cdbef4795c672296aa752eb353a1d7a618a767"
+            "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-operator-bundle@sha256:207a641a339791989b02c248be26b6a5fbbb7f646e687026fb52e38e8d618a50"
         },
         {
             "name": "",
-            "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-rhel9-operator@sha256:3cbd7eef2943bc120765c22d8314e0c5e777dbb310ba58a62910b04676a5d03b"
-        },
-        {
-            "name": "",
-            "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy-rhel9"
+            "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-rhel9-operator@sha256:de3c7ae5b75708aea57ab8f11208e7cba987bed9ef3ee40df25e40bf58c4be05"
         }
     ]
 }
