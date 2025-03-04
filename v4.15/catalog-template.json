@@ -8,7 +8,7 @@
         {
             "entries": [
                 {
-                    "name": "trustee-operator.v0.2.0"
+                    "name": "trustee-operator.v0.3.0"
                 }
             ],
             "name": "stable",
@@ -16,7 +16,7 @@
             "schema": "olm.channel"
         },
         {
-            "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-operator-bundle@sha256:feeaea826bc325d452f9ee1283cdbef4795c672296aa752eb353a1d7a618a767",
+            "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-operator-bundle@sha256:207a641a339791989b02c248be26b6a5fbbb7f646e687026fb52e38e8d618a50",
             "schema": "olm.bundle"
         }
     ],
