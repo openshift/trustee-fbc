@@ -16,7 +16,7 @@
             "schema": "olm.channel"
         },
         {
-            "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-operator-bundle@sha256:207a641a339791989b02c248be26b6a5fbbb7f646e687026fb52e38e8d618a50",
+            "image": "quay.io/redhat-user-workloads/ose-osc-tenant/trustee/quay.io/redhat-user-workloads/ose-osc-tenant/trustee/trustee-operator-bundle:on-pr-f9c1b9264f0737c6ce8bb26cf6fd176d6bad0c14",
             "schema": "olm.bundle"
         }
     ],
