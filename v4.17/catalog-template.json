@@ -16,7 +16,7 @@
             "schema": "olm.channel"
         },
         {
-            "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-operator-bundle@sha256:266f009aee95994fc457c50a1c52b00479af5b37dcae22dc5e2dd1a42ec04623",
+            "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-operator-bundle@sha256:473ed11903994dc6473844e1cd5b0f9c751db50fe8d3ded7e024ceca0089d781",
             "schema": "olm.bundle"
         }
     ],

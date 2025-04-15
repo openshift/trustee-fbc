@@ -17,7 +17,7 @@
     "schema": "olm.bundle",
     "name": "trustee-operator.v0.3.0",
     "package": "trustee-operator",
-    "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-operator-bundle@sha256:266f009aee95994fc457c50a1c52b00479af5b37dcae22dc5e2dd1a42ec04623",
+    "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-operator-bundle@sha256:473ed11903994dc6473844e1cd5b0f9c751db50fe8d3ded7e024ceca0089d781",
     "properties": [
         {
             "type": "olm.gvk",
@@ -41,7 +41,7 @@
                     "alm-examples": "[]",
                     "capabilities": "Basic Install",
                     "categories": "Security",
-                    "containerImage": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-rhel9-operator@sha256:4941b1ae363ab1f41efd1432bb5ad0b376e9f354524f52d5a063af13fb1b0ab7",
+                    "containerImage": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-rhel9-operator@sha256:8d6be8f419389a90d57aca4271d92edcb053bae3f3774a11113e4b955347fe11",
                     "createdAt": "2024-06-07T10:06:06Z",
                     "features.operators.openshift.io/cnf": "false",
                     "features.operators.openshift.io/cni": "false",
@@ -125,11 +125,11 @@
     "relatedImages": [
         {
             "name": "",
-            "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-operator-bundle@sha256:266f009aee95994fc457c50a1c52b00479af5b37dcae22dc5e2dd1a42ec04623"
+            "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-operator-bundle@sha256:473ed11903994dc6473844e1cd5b0f9c751db50fe8d3ded7e024ceca0089d781"
         },
         {
             "name": "",
-            "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-rhel9-operator@sha256:4941b1ae363ab1f41efd1432bb5ad0b376e9f354524f52d5a063af13fb1b0ab7"
+            "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-rhel9-operator@sha256:8d6be8f419389a90d57aca4271d92edcb053bae3f3774a11113e4b955347fe11"
         }
     ]
 }
