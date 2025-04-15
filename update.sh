@@ -3,12 +3,6 @@
 # Print what you're doing, exit on error.
 set -xe
 
-# Which OCP version are we running this for.
-VERSION="$1"
-
-# Check that a folder exists for the version you set.
-ls "$VERSION" > /dev/null
-
 # Make script fail when API requests fail.
 alias curl="curl --fail"
 
@@ -37,8 +31,14 @@ replace_digest () {
 
 TAG="$(get_tag)"
 DIGEST="$(get_digest $TAG)"
-FILE="$VERSION/catalog-template.json"
-replace_digest "$DIGEST" "$FILE"
+
+for VERSION in $@; do
+    # Check that a folder exists for the version you set.
+    ls "$VERSION" > /dev/null
+
+    FILE="$VERSION/catalog-template.json"
+    replace_digest "$DIGEST" "$FILE"
+done
 
 # No more debug. All went good.
 set +x
