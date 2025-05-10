@@ -6,10 +6,8 @@ metadata:
     build.appstudio.redhat.com/commit_sha: '{{revision}}'
     build.appstudio.redhat.com/target_branch: '{{target_branch}}'
     pipelinesascode.tekton.dev/max-keep-runs: "3"
-    pipelinesascode.tekton.dev/on-cel-expression:
-      event == "push" &&
-      target_branch == "main" &&
-      files.all.exists(path, path.matches('.tekton/pipeline.yaml$|.tekton/trustee-fbc-4-15-.*.yaml$|v4.15/Dockerfile$|v4.15/.*/catalog.json$'))
+    pipelinesascode.tekton.dev/on-cel-expression: event == "push" && target_branch
+      == "main" && files.all.exists(path, path.matches('.tekton/pipeline.yaml$|.tekton/trustee-fbc-4-15-.*.yaml$|v4.15/Dockerfile$|v4.15/.*/catalog.json$'))
   creationTimestamp: null
   labels:
     appstudio.openshift.io/application: trustee-fbc-4-15
@@ -31,10 +29,9 @@ spec:
     value: v4.15/Dockerfile
   - name: build-platforms
     value:
-      - linux/x86_64
-      - linux/s390x
+    - linux/x86_64
+    - linux/s390x
   pipelineRef:
-    resolver: bundles
     params:
     - name: name
       value: fbc-builder
@@ -42,7 +39,9 @@ spec:
       value: quay.io/konflux-ci/tekton-catalog/pipeline-fbc-builder:devel@sha256:e4a2bf014844477d45170caaffa9370378b9bb60619eaa8c7a3d233aa37cdc0d
     - name: kind
       value: pipeline
-  taskRunTemplate: {}
+    resolver: bundles
+  taskRunTemplate:
+    serviceAccountName: build-pipeline-trustee-fbc-4-15
   workspaces:
   - name: workspace
     volumeClaimTemplate:
