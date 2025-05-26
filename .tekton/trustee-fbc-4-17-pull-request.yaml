@@ -7,10 +7,8 @@ metadata:
     build.appstudio.redhat.com/pull_request_number: '{{pull_request_number}}'
     build.appstudio.redhat.com/target_branch: '{{target_branch}}'
     pipelinesascode.tekton.dev/max-keep-runs: "3"
-    pipelinesascode.tekton.dev/on-cel-expression:
-      event == "pull_request" &&
-      target_branch == "main" &&
-      files.all.exists(path, path.matches('.tekton/pipeline.yaml$|.tekton/trustee-fbc-4-17-.*.yaml$|v4.17/Dockerfile$|v4.17/.*/catalog.json$'))
+    pipelinesascode.tekton.dev/on-cel-expression: event == "pull_request" && target_branch
+      == "main" && files.all.exists(path, path.matches('.tekton/pipeline.yaml$|.tekton/trustee-fbc-4-17-.*.yaml$|v4.17/Dockerfile$|v4.17/.*/catalog.json$'))
   creationTimestamp: null
   labels:
     appstudio.openshift.io/application: trustee-fbc-4-17
@@ -34,10 +32,9 @@ spec:
     value: v4.17/Dockerfile
   - name: build-platforms
     value:
-      - linux/x86_64
-      - linux/s390x
+    - linux/x86_64
+    - linux/s390x
   pipelineRef:
-    resolver: bundles
     params:
     - name: name
       value: fbc-builder
@@ -45,7 +42,9 @@ spec:
       value: quay.io/konflux-ci/tekton-catalog/pipeline-fbc-builder:devel@sha256:0bd24df76558d712c30ff5f702e09423923432a228c5a68d5edfe7f49c75dc9b
     - name: kind
       value: pipeline
-  taskRunTemplate: {}
+    resolver: bundles
+  taskRunTemplate:
+    serviceAccountName: build-pipeline-trustee-fbc-4-17
   workspaces:
   - name: workspace
     volumeClaimTemplate:
