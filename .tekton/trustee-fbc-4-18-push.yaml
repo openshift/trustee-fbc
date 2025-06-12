@@ -36,10 +36,10 @@ spec:
     - name: name
       value: fbc-builder
     - name: bundle
-      value: quay.io/konflux-ci/tekton-catalog/pipeline-fbc-builder:devel@sha256:a3882015e30ffbf50d9a03c09a808ea359a537631646fdeaddbfcfc378180556
+      value: quay.io/konflux-ci/tekton-catalog/pipeline-fbc-builder:devel@sha256:cb6303576f0b4d41ccdf6eefa2b787224f61560006edfe9b76e987183ad0cf2b
     - name: kind
       value: pipeline
-    resolver: bundles
+    resolver: bundlesrelease-v0.4.0
   taskRunTemplate:
     serviceAccountName: build-pipeline-trustee-fbc-4-18
   workspaces:

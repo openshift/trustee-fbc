@@ -4,17 +4,16 @@ metadata:
   annotations:
     build.appstudio.openshift.io/repo: https://github.com/openshift/trustee-fbc?rev={{revision}}
     build.appstudio.redhat.com/commit_sha: '{{revision}}'
-    build.appstudio.redhat.com/pull_request_number: '{{pull_request_number}}'
     build.appstudio.redhat.com/target_branch: '{{target_branch}}'
     pipelinesascode.tekton.dev/max-keep-runs: "3"
-    pipelinesascode.tekton.dev/on-cel-expression: event == "pull_request" && target_branch
-      == "main" && files.all.exists(path, path.matches('.tekton/pipeline.yaml$|.tekton/trustee-fbc-4-18-.*.yaml$|v4.18/Dockerfile$|v4.18/.*/catalog.json$'))
+    pipelinesascode.tekton.dev/on-cel-expression: event == "push" && target_branch
+      == "main" && files.all.exists(path, path.matches('.tekton/pipeline.yaml$|.tekton/trustee-fbc-4-19-.*.yaml$|v4.19/Dockerfile$|v4.19/.*/catalog.json$'))
   creationTimestamp: null
   labels:
-    appstudio.openshift.io/application: trustee-fbc-4-18
-    appstudio.openshift.io/component: trustee-fbc-4-18
+    appstudio.openshift.io/application: trustee-fbc-4-19
+    appstudio.openshift.io/component: trustee-fbc-4-19
     pipelines.appstudio.openshift.io/type: build
-  name: trustee-fbc-4-18-on-pull-request
+  name: trustee-fbc-4-19-on-push
   namespace: ose-osc-tenant
 spec:
   params:
@@ -23,13 +22,11 @@ spec:
   - name: revision
     value: '{{revision}}'
   - name: output-image
-    value: quay.io/redhat-user-workloads/ose-osc-tenant/trustee-fbc-4-18:on-pr-{{revision}}
-  - name: image-expires-after
-    value: 5d
+    value: quay.io/redhat-user-workloads/ose-osc-tenant/trustee-fbc-4-19:{{revision}}
   - name: path-context
-    value: v4.18
+    value: v4.19
   - name: dockerfile
-    value: v4.18/Dockerfile
+    value: v4.19/Dockerfile
   - name: build-platforms
     value:
     - linux/x86_64
@@ -44,7 +41,7 @@ spec:
       value: pipeline
     resolver: bundles
   taskRunTemplate:
-    serviceAccountName: build-pipeline-trustee-fbc-4-18
+    serviceAccountName: build-pipeline-trustee-fbc-4-19
   workspaces:
   - name: workspace
     volumeClaimTemplate:
