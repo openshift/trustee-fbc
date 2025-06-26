@@ -3,11 +3,13 @@
 # Print what you're doing, exit on error.
 set -xe
 
-# Which OCP version are we running this for.
-VERSION="$1"
+# Which OCP versions are we running this for.
+VERSIONS=$@
 
-# Check that a folder exists for the version you set.
-ls "$VERSION" > /dev/null
+[ -n "$VERSIONS" ] || VERSIONS="v4.*"
+
+# Check that a folder exists for the versions you set.
+ls $VERSIONS > /dev/null
 
 # Make script fail when API requests fail.
 alias curl="curl --fail"
@@ -28,6 +30,11 @@ get_digest () {
     curl -L "$URL" | jq -r '.tags[0].manifest_digest'
 }
 
+sed_digest () {
+    DIGEST="$1"
+    sed -E -i "s/sha256:[0-9a-f]{64}/$DIGEST/"
+}
+
 # Replace any digest in the <FILE> with the new <DIGEST>.
 replace_digest () {
     DIGEST="$1"
@@ -35,10 +42,23 @@ replace_digest () {
     sed -E -i "s/sha256:[0-9a-f]{64}/$DIGEST/" "$FILE"
 }
 
+# Update the last bundle image digest in the <FILE> with the new <DIGEST>
+replace_digest_last () {
+    DIGEST="$1"
+    FILE="$2"
+
+    OLD_DIGEST=$(yq '.entries[] | select(.schema == "olm.bundle") | .image' "$FILE" | tail -n1 | sed 's/.*@//')
+
+    sed -i "s/$OLD_DIGEST/$DIGEST/" "$FILE"
+}
+
 TAG="$(get_tag)"
 DIGEST="$(get_digest $TAG)"
-FILE="$VERSION/catalog-template.json"
-replace_digest "$DIGEST" "$FILE"
+
+for VERSION in $VERSIONS; do
+    FILE="$VERSION/catalog-template.yaml"
+    replace_digest_last "$DIGEST" "$FILE"
+done
 
 # No more debug. All went good.
 set +x
