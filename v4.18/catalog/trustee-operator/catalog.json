@@ -275,7 +275,7 @@
     "schema": "olm.bundle",
     "name": "trustee-operator.v0.4.0",
     "package": "trustee-operator",
-    "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-operator-bundle@sha256:ee6dec6380602b0a3ca99f34cac28725ccf49ce780ba601bcf8402a862080b88",
+    "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-operator-bundle@sha256:bea514fffdcd14365ee59ac48e997161d6993dd8ff678d663bde70d64a72b954",
     "properties": [
         {
             "type": "olm.gvk",
@@ -299,7 +299,7 @@
                     "alm-examples": "[]",
                     "capabilities": "Basic Install",
                     "categories": "Security",
-                    "containerImage": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-rhel9-operator@sha256:1040126fc89ed47eb0bd91ab0679425f45134a48481e1c1f49e89c65d2768515",
+                    "containerImage": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-rhel9-operator@sha256:2da693cb09f39009291ef10d9fa21da8ba1ebbe76b8cab9a693889a710cd1ed5",
                     "createdAt": "2024-06-07T10:06:06Z",
                     "features.operators.openshift.io/cnf": "false",
                     "features.operators.openshift.io/cni": "false",
@@ -383,11 +383,11 @@
     "relatedImages": [
         {
             "name": "",
-            "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-operator-bundle@sha256:ee6dec6380602b0a3ca99f34cac28725ccf49ce780ba601bcf8402a862080b88"
+            "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-operator-bundle@sha256:bea514fffdcd14365ee59ac48e997161d6993dd8ff678d663bde70d64a72b954"
         },
         {
             "name": "",
-            "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-rhel9-operator@sha256:1040126fc89ed47eb0bd91ab0679425f45134a48481e1c1f49e89c65d2768515"
+            "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-rhel9-operator@sha256:2da693cb09f39009291ef10d9fa21da8ba1ebbe76b8cab9a693889a710cd1ed5"
         }
     ]
 }
