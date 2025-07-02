@@ -147,7 +147,7 @@
         },
         {
             "name": "",
-            "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy-rhel9"
+            "image": "registry.redhat.io/openshift4/ose-kube-rbac-proxy-rhel9@sha256:27398947432dd34625c7a8c537c273dc0e8af85d2fcce6749519acd379bb64ca"
         }
     ]
 }
