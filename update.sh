@@ -3,42 +3,50 @@
 # Print what you're doing, exit on error.
 set -xe
 
-# Which OCP version are we running this for.
-VERSION="$1"
+# Which OCP versions are we running this for.
+versions="$@"
 
-# Check that a folder exists for the version you set.
-ls "$VERSION" > /dev/null
+[ -n "${versions}" ] || versions="v4.*"
+
+# Check that a folder exists for the versions you set.
+ls ${versions} > /dev/null
 
 # Make script fail when API requests fail.
 alias curl="curl --fail"
 
 # Get the latest merge commit for the bundle. This is the string the bundle image is tagged with.
 get_tag () {
-    URL="https://api.github.com/repos/openshift/trustee-operator/commits?per_page=1&path=bundle"
-    COMMIT=$(curl "$URL" | jq -r '.[0].sha')
-    URL="https://api.github.com/repos/openshift/trustee-operator/commits/$COMMIT/pulls"
-    curl "$URL" | jq -r '.[0].merge_commit_sha'
+    local commits_url="https://api.github.com/repos/openshift/trustee-operator/commits?per_page=1&path=bundle"
+    local commit=$(curl "${commits_url}" | jq -r '.[0].sha')
+    local pulls_url="https://api.github.com/repos/openshift/trustee-operator/commits/$commit/pulls"
+    curl "${pulls_url}" | jq -r '.[0].merge_commit_sha'
 }
 
 # Get the digest for a tagged image. Pass the <TAG> as the first argument.
 # Quay API docs are at https://docs.quay.io/api/swagger/#!/tag/listRepoTags.
 get_digest () {
-    TAG="$1"
-    URL="https://quay.io/api/v1/repository/redhat-user-workloads/ose-osc-tenant/trustee/trustee-operator-bundle/tag?specificTag=$TAG"
-    curl -L "$URL" | jq -r '.tags[0].manifest_digest'
+    local tag="$1"
+    local url="https://quay.io/api/v1/repository/redhat-user-workloads/ose-osc-tenant/trustee/trustee-operator-bundle/tag?specificTag=$tag"
+    curl -L "${url}" | jq -r '.tags[0].manifest_digest'
 }
 
-# Replace any digest in the <FILE> with the new <DIGEST>.
-replace_digest () {
-    DIGEST="$1"
-    FILE="$2"
-    sed -E -i "s/sha256:[0-9a-f]{64}/$DIGEST/" "$FILE"
+# Update the last bundle image digest in the <FILE> with the new <DIGEST>
+replace_digest_last () {
+    local digest="$1"
+    local file="$2"
+
+    local old_digest=$(yq '.entries[] | select(.schema == "olm.bundle") | .image' "${file}" | tail -n1 | sed 's/.*@//')
+
+    sed -i "s/${old_digest}/${digest}/" "${file}"
 }
 
-TAG="$(get_tag)"
-DIGEST="$(get_digest $TAG)"
-FILE="$VERSION/catalog-template.json"
-replace_digest "$DIGEST" "$FILE"
+tag="$(get_tag)"
+digest="$(get_digest ${tag})"
+
+for version in ${versions}; do
+    file="${version}/catalog-template.yaml"
+    replace_digest_last "${digest}" "${file}"
+done
 
 # No more debug. All went good.
 set +x
