@@ -21,7 +21,6 @@ metadata:
 spec:
   imageDigestMirrors:
     - mirrors:
-    - mirrors:
         - quay.io/redhat-user-workloads/ose-osc-tenant/trustee/trustee
       source: registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-rhel9
     - mirrors:
