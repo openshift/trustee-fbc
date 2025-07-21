@@ -22,6 +22,6 @@ entries:
     schema: olm.bundle
   - image: registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-operator-bundle@sha256:473ed11903994dc6473844e1cd5b0f9c751db50fe8d3ded7e024ceca0089d781
     schema: olm.bundle
-  - image: registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-operator-bundle@sha256:7199fd684aeee130b1861b2d73d1245e5fafa81141af48a6af68fa4481a4df53
+  - image: registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-operator-bundle@sha256:04d2fb1bc115259ccaf8e2e6e0ce30a7d4ef2a2242496ea9f74fab38bd743367
     schema: olm.bundle
 schema: olm.template.basic
