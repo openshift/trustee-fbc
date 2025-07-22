@@ -275,7 +275,7 @@
     "schema": "olm.bundle",
     "name": "trustee-operator.v0.4.0",
     "package": "trustee-operator",
-    "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-operator-bundle@sha256:04d2fb1bc115259ccaf8e2e6e0ce30a7d4ef2a2242496ea9f74fab38bd743367",
+    "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-operator-bundle@sha256:dbe767cf0ff28d44faf6a1cfb9af92b57093ccfde7470c857dc61d2b8db0031b",
     "properties": [
         {
             "type": "olm.gvk",
@@ -383,7 +383,7 @@
     "relatedImages": [
         {
             "name": "",
-            "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-operator-bundle@sha256:04d2fb1bc115259ccaf8e2e6e0ce30a7d4ef2a2242496ea9f74fab38bd743367"
+            "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-operator-bundle@sha256:dbe767cf0ff28d44faf6a1cfb9af92b57093ccfde7470c857dc61d2b8db0031b"
         },
         {
             "name": "",
