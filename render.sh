@@ -8,7 +8,7 @@ OCP_VERSIONS=$1
 test -n "$OCP_VERSIONS" || OCP_VERSIONS="v4.*"
 
 BUILD_REGISTRY="quay.io/redhat-user-workloads/ose-osc-tenant/trustee/"
-RELEASE_REGISTRY="registry.redhat.io/confidential-compute-attestation-tech-preview/"
+RELEASE_REGISTRY="registry.redhat.io/build-of-trustee/"
 PACKAGE_NAME="trustee-operator"
 TEMPLATE_NAME="catalog-template.yaml"
 ICON="icon.png"
