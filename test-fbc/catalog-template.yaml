@@ -1,0 +1,18 @@
+---
+entries:
+  - defaultChannel: stable
+    icon:
+      base64data: ""
+      mediatype: image/png
+    name: trustee-operator
+    schema: olm.package
+  - entries:
+      - name: trustee-operator.v0.4.1
+        replaces: trustee-operator.v0.4.0
+        skipRange: '>=0.1.0 <0.2.0'
+    name: stable
+    package: trustee-operator
+    schema: olm.channel
+  - image: registry.redhat.io/build-of-trustee/trustee-operator-bundle@sha256:6a4583e33d595c560c0618879ac6b3b085b33f55767b08aa80e0a4f44221acd2
+    schema: olm.bundle
+schema: olm.template.basic
