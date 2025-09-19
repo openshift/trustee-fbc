@@ -7,8 +7,8 @@ entries:
     name: trustee-operator
     schema: olm.package
   - entries:
-      - name: trustee-operator.v0.4.1
-        replaces: trustee-operator.v0.4.0
+      - name: trustee-operator.v0.4.2
+        replaces: trustee-operator.v0.4.1
         skipRange: '>=0.1.0 <0.2.0'
     name: stable
     package: trustee-operator
