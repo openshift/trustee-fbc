@@ -1,0 +1,516 @@
+{
+    "schema": "olm.package",
+    "name": "trustee-operator",
+    "defaultChannel": "stable",
+    "icon": {
+        "base64data": "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",
+        "mediatype": "image/png"
+    }
+}
+{
+    "schema": "olm.channel",
+    "name": "stable",
+    "package": "trustee-operator",
+    "entries": [
+        {
+            "name": "trustee-operator.v0.3.0",
+            "replaces": "trustee-operator.v0.2.0",
+            "skipRange": ">=0.1.0 <0.2.0"
+        },
+        {
+            "name": "trustee-operator.v0.4.0",
+            "replaces": "trustee-operator.v0.3.0",
+            "skipRange": ">=0.1.0 <0.2.0"
+        },
+        {
+            "name": "trustee-operator.v0.4.1",
+            "replaces": "trustee-operator.v0.4.0",
+            "skipRange": ">=0.1.0 <0.2.0"
+        },
+        {
+            "name": "trustee-operator.v0.4.2",
+            "replaces": "trustee-operator.v0.4.1",
+            "skipRange": ">=0.1.0 <0.2.0"
+        }
+    ]
+}
+{
+    "schema": "olm.bundle",
+    "name": "trustee-operator.v0.3.0",
+    "package": "trustee-operator",
+    "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-operator-bundle@sha256:473ed11903994dc6473844e1cd5b0f9c751db50fe8d3ded7e024ceca0089d781",
+    "properties": [
+        {
+            "type": "olm.gvk",
+            "value": {
+                "group": "confidentialcontainers.org",
+                "kind": "KbsConfig",
+                "version": "v1alpha1"
+            }
+        },
+        {
+            "type": "olm.package",
+            "value": {
+                "packageName": "trustee-operator",
+                "version": "0.3.0"
+            }
+        },
+        {
+            "type": "olm.csv.metadata",
+            "value": {
+                "annotations": {
+                    "alm-examples": "[]",
+                    "capabilities": "Basic Install",
+                    "categories": "Security",
+                    "containerImage": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-rhel9-operator@sha256:8d6be8f419389a90d57aca4271d92edcb053bae3f3774a11113e4b955347fe11",
+                    "createdAt": "2024-06-07T10:06:06Z",
+                    "features.operators.openshift.io/cnf": "false",
+                    "features.operators.openshift.io/cni": "false",
+                    "features.operators.openshift.io/csi": "false",
+                    "features.operators.openshift.io/disconnected": "true",
+                    "features.operators.openshift.io/fips-compliant": "false",
+                    "features.operators.openshift.io/proxy-aware": "false",
+                    "features.operators.openshift.io/tls-profiles": "false",
+                    "features.operators.openshift.io/token-auth-aws": "false",
+                    "features.operators.openshift.io/token-auth-azure": "false",
+                    "features.operators.openshift.io/token-auth-gcp": "false",
+                    "operatorframework.io/suggested-namespace": "trustee-operator-system",
+                    "operators.openshift.io/valid-subscription": "[\"OpenShift Container Platform\", \"OpenShift Platform Plus\"]",
+                    "operators.operatorframework.io/builder": "operator-sdk-v1.36.1",
+                    "operators.operatorframework.io/project_layout": "go.kubebuilder.io/v4",
+                    "repository": "https://github.com/openshift/trustee-operator",
+                    "support": "Confidential Containers Community"
+                },
+                "apiServiceDefinitions": {},
+                "crdDescriptions": {
+                    "owned": [
+                        {
+                            "name": "kbsconfigs.confidentialcontainers.org",
+                            "version": "v1alpha1",
+                            "kind": "KbsConfig",
+                            "displayName": "Kbs Config",
+                            "description": "KbsConfig is the Schema for the kbsconfigs API"
+                        }
+                    ]
+                },
+                "description": "Remote attestation operator for confidential containers",
+                "displayName": "Red Hat build of Trustee",
+                "installModes": [
+                    {
+                        "type": "OwnNamespace",
+                        "supported": true
+                    },
+                    {
+                        "type": "SingleNamespace",
+                        "supported": true
+                    },
+                    {
+                        "type": "MultiNamespace",
+                        "supported": false
+                    },
+                    {
+                        "type": "AllNamespaces",
+                        "supported": false
+                    }
+                ],
+                "keywords": [
+                    "trustee",
+                    "Confidential Computing",
+                    "Attestation"
+                ],
+                "labels": {
+                    "operatorframework.io/arch.amd64": "supported",
+                    "operatorframework.io/arch.s390x": "supported",
+                    "operatorframework.io/os.linux": "supported"
+                },
+                "links": [
+                    {
+                        "name": "Red Hat build of Trustee",
+                        "url": "https://github.com/openshift/trustee-operator"
+                    }
+                ],
+                "maintainers": [
+                    {
+                        "name": "Red Hat",
+                        "email": "support@redhat.com"
+                    }
+                ],
+                "maturity": "beta",
+                "provider": {
+                    "name": "Red Hat",
+                    "url": "https://github.com/confidential-containers"
+                }
+            }
+        }
+    ],
+    "relatedImages": [
+        {
+            "name": "",
+            "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-operator-bundle@sha256:473ed11903994dc6473844e1cd5b0f9c751db50fe8d3ded7e024ceca0089d781"
+        },
+        {
+            "name": "",
+            "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-rhel9-operator@sha256:8d6be8f419389a90d57aca4271d92edcb053bae3f3774a11113e4b955347fe11"
+        }
+    ]
+}
+{
+    "schema": "olm.bundle",
+    "name": "trustee-operator.v0.4.0",
+    "package": "trustee-operator",
+    "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-operator-bundle@sha256:dbe767cf0ff28d44faf6a1cfb9af92b57093ccfde7470c857dc61d2b8db0031b",
+    "properties": [
+        {
+            "type": "olm.gvk",
+            "value": {
+                "group": "confidentialcontainers.org",
+                "kind": "KbsConfig",
+                "version": "v1alpha1"
+            }
+        },
+        {
+            "type": "olm.package",
+            "value": {
+                "packageName": "trustee-operator",
+                "version": "0.4.0"
+            }
+        },
+        {
+            "type": "olm.csv.metadata",
+            "value": {
+                "annotations": {
+                    "alm-examples": "[]",
+                    "capabilities": "Basic Install",
+                    "categories": "Security",
+                    "containerImage": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-rhel9-operator@sha256:380e1f2ee5c5c4d3cfe0ce4102b687c093e1ec56a0204bbbe9b0f3b05eaf91e7",
+                    "createdAt": "2024-06-07T10:06:06Z",
+                    "features.operators.openshift.io/cnf": "false",
+                    "features.operators.openshift.io/cni": "false",
+                    "features.operators.openshift.io/csi": "false",
+                    "features.operators.openshift.io/disconnected": "true",
+                    "features.operators.openshift.io/fips-compliant": "false",
+                    "features.operators.openshift.io/proxy-aware": "false",
+                    "features.operators.openshift.io/tls-profiles": "false",
+                    "features.operators.openshift.io/token-auth-aws": "false",
+                    "features.operators.openshift.io/token-auth-azure": "false",
+                    "features.operators.openshift.io/token-auth-gcp": "false",
+                    "operatorframework.io/suggested-namespace": "trustee-operator-system",
+                    "operators.openshift.io/valid-subscription": "[\"OpenShift Container Platform\", \"OpenShift Platform Plus\"]",
+                    "operators.operatorframework.io/builder": "operator-sdk-v1.36.1",
+                    "operators.operatorframework.io/project_layout": "go.kubebuilder.io/v4",
+                    "repository": "https://github.com/openshift/trustee-operator",
+                    "support": "Confidential Containers Community"
+                },
+                "apiServiceDefinitions": {},
+                "crdDescriptions": {
+                    "owned": [
+                        {
+                            "name": "kbsconfigs.confidentialcontainers.org",
+                            "version": "v1alpha1",
+                            "kind": "KbsConfig",
+                            "displayName": "Kbs Config",
+                            "description": "KbsConfig is the Schema for the kbsconfigs API"
+                        }
+                    ]
+                },
+                "description": "Remote attestation operator for confidential containers",
+                "displayName": "Red Hat build of Trustee",
+                "installModes": [
+                    {
+                        "type": "OwnNamespace",
+                        "supported": true
+                    },
+                    {
+                        "type": "SingleNamespace",
+                        "supported": true
+                    },
+                    {
+                        "type": "MultiNamespace",
+                        "supported": false
+                    },
+                    {
+                        "type": "AllNamespaces",
+                        "supported": false
+                    }
+                ],
+                "keywords": [
+                    "trustee",
+                    "Confidential Computing",
+                    "Attestation"
+                ],
+                "labels": {
+                    "operatorframework.io/arch.amd64": "supported",
+                    "operatorframework.io/arch.s390x": "supported",
+                    "operatorframework.io/os.linux": "supported"
+                },
+                "links": [
+                    {
+                        "name": "Red Hat build of Trustee",
+                        "url": "https://github.com/openshift/trustee-operator"
+                    }
+                ],
+                "maintainers": [
+                    {
+                        "name": "Red Hat",
+                        "email": "support@redhat.com"
+                    }
+                ],
+                "maturity": "beta",
+                "provider": {
+                    "name": "Red Hat",
+                    "url": "https://github.com/confidential-containers"
+                }
+            }
+        }
+    ],
+    "relatedImages": [
+        {
+            "name": "",
+            "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-operator-bundle@sha256:dbe767cf0ff28d44faf6a1cfb9af92b57093ccfde7470c857dc61d2b8db0031b"
+        },
+        {
+            "name": "",
+            "image": "registry.redhat.io/confidential-compute-attestation-tech-preview/trustee-rhel9-operator@sha256:380e1f2ee5c5c4d3cfe0ce4102b687c093e1ec56a0204bbbe9b0f3b05eaf91e7"
+        }
+    ]
+}
+{
+    "schema": "olm.bundle",
+    "name": "trustee-operator.v0.4.1",
+    "package": "trustee-operator",
+    "image": "registry.redhat.io/build-of-trustee/trustee-operator-bundle@sha256:6a4583e33d595c560c0618879ac6b3b085b33f55767b08aa80e0a4f44221acd2",
+    "properties": [
+        {
+            "type": "olm.gvk",
+            "value": {
+                "group": "confidentialcontainers.org",
+                "kind": "KbsConfig",
+                "version": "v1alpha1"
+            }
+        },
+        {
+            "type": "olm.package",
+            "value": {
+                "packageName": "trustee-operator",
+                "version": "0.4.1"
+            }
+        },
+        {
+            "type": "olm.csv.metadata",
+            "value": {
+                "annotations": {
+                    "alm-examples": "[]",
+                    "capabilities": "Basic Install",
+                    "categories": "Security",
+                    "containerImage": "registry.redhat.io/build-of-trustee/trustee-rhel9-operator@sha256:6c6cf27ce98fd53874e8894b3cd1eba89553fb1536b8c21cdf749011c76cda90",
+                    "createdAt": "2024-06-07T10:06:06Z",
+                    "features.operators.openshift.io/cnf": "false",
+                    "features.operators.openshift.io/cni": "false",
+                    "features.operators.openshift.io/csi": "false",
+                    "features.operators.openshift.io/disconnected": "true",
+                    "features.operators.openshift.io/fips-compliant": "false",
+                    "features.operators.openshift.io/proxy-aware": "false",
+                    "features.operators.openshift.io/tls-profiles": "false",
+                    "features.operators.openshift.io/token-auth-aws": "false",
+                    "features.operators.openshift.io/token-auth-azure": "false",
+                    "features.operators.openshift.io/token-auth-gcp": "false",
+                    "operatorframework.io/suggested-namespace": "trustee-operator-system",
+                    "operators.openshift.io/valid-subscription": "[\"OpenShift Container Platform\", \"OpenShift Platform Plus\"]",
+                    "operators.operatorframework.io/builder": "operator-sdk-v1.36.1",
+                    "operators.operatorframework.io/project_layout": "go.kubebuilder.io/v4",
+                    "repository": "https://github.com/openshift/trustee-operator",
+                    "support": "Confidential Containers Community"
+                },
+                "apiServiceDefinitions": {},
+                "crdDescriptions": {
+                    "owned": [
+                        {
+                            "name": "kbsconfigs.confidentialcontainers.org",
+                            "version": "v1alpha1",
+                            "kind": "KbsConfig",
+                            "displayName": "Kbs Config",
+                            "description": "KbsConfig is the Schema for the kbsconfigs API"
+                        }
+                    ]
+                },
+                "description": "Remote attestation operator for confidential containers",
+                "displayName": "Red Hat build of Trustee",
+                "installModes": [
+                    {
+                        "type": "OwnNamespace",
+                        "supported": true
+                    },
+                    {
+                        "type": "SingleNamespace",
+                        "supported": true
+                    },
+                    {
+                        "type": "MultiNamespace",
+                        "supported": false
+                    },
+                    {
+                        "type": "AllNamespaces",
+                        "supported": false
+                    }
+                ],
+                "keywords": [
+                    "trustee",
+                    "Confidential Computing",
+                    "Attestation"
+                ],
+                "labels": {
+                    "operatorframework.io/arch.amd64": "supported",
+                    "operatorframework.io/arch.s390x": "supported",
+                    "operatorframework.io/os.linux": "supported"
+                },
+                "links": [
+                    {
+                        "name": "Red Hat build of Trustee",
+                        "url": "https://github.com/openshift/trustee-operator"
+                    }
+                ],
+                "maintainers": [
+                    {
+                        "name": "Red Hat",
+                        "email": "support@redhat.com"
+                    }
+                ],
+                "maturity": "beta",
+                "provider": {
+                    "name": "Red Hat",
+                    "url": "https://github.com/confidential-containers"
+                }
+            }
+        }
+    ],
+    "relatedImages": [
+        {
+            "name": "",
+            "image": "registry.redhat.io/build-of-trustee/trustee-operator-bundle@sha256:6a4583e33d595c560c0618879ac6b3b085b33f55767b08aa80e0a4f44221acd2"
+        },
+        {
+            "name": "",
+            "image": "registry.redhat.io/build-of-trustee/trustee-rhel9-operator@sha256:6c6cf27ce98fd53874e8894b3cd1eba89553fb1536b8c21cdf749011c76cda90"
+        }
+    ]
+}
+{
+    "schema": "olm.bundle",
+    "name": "trustee-operator.v0.4.2",
+    "package": "trustee-operator",
+    "image": "registry.redhat.io/build-of-trustee/trustee-operator-bundle@sha256:c6bc928d220fa001e2a7b5e8661a3c8a604c21385dc1bb97b8dd121ca2347916",
+    "properties": [
+        {
+            "type": "olm.gvk",
+            "value": {
+                "group": "confidentialcontainers.org",
+                "kind": "KbsConfig",
+                "version": "v1alpha1"
+            }
+        },
+        {
+            "type": "olm.package",
+            "value": {
+                "packageName": "trustee-operator",
+                "version": "0.4.2"
+            }
+        },
+        {
+            "type": "olm.csv.metadata",
+            "value": {
+                "annotations": {
+                    "alm-examples": "[]",
+                    "capabilities": "Basic Install",
+                    "categories": "Security",
+                    "containerImage": "registry.redhat.io/build-of-trustee/trustee-rhel9-operator@sha256:fe8e23de14ad088c79b1bd5e7aab08a1b88a86679effcbf174be81e761bd9d6d",
+                    "createdAt": "2024-06-07T10:06:06Z",
+                    "features.operators.openshift.io/cnf": "false",
+                    "features.operators.openshift.io/cni": "false",
+                    "features.operators.openshift.io/csi": "false",
+                    "features.operators.openshift.io/disconnected": "true",
+                    "features.operators.openshift.io/fips-compliant": "false",
+                    "features.operators.openshift.io/proxy-aware": "false",
+                    "features.operators.openshift.io/tls-profiles": "false",
+                    "features.operators.openshift.io/token-auth-aws": "false",
+                    "features.operators.openshift.io/token-auth-azure": "false",
+                    "features.operators.openshift.io/token-auth-gcp": "false",
+                    "operatorframework.io/suggested-namespace": "trustee-operator-system",
+                    "operators.openshift.io/valid-subscription": "[\"OpenShift Container Platform\", \"OpenShift Platform Plus\"]",
+                    "operators.operatorframework.io/builder": "operator-sdk-v1.36.1",
+                    "operators.operatorframework.io/project_layout": "go.kubebuilder.io/v4",
+                    "repository": "https://github.com/openshift/trustee-operator",
+                    "support": "Confidential Containers Community"
+                },
+                "apiServiceDefinitions": {},
+                "crdDescriptions": {
+                    "owned": [
+                        {
+                            "name": "kbsconfigs.confidentialcontainers.org",
+                            "version": "v1alpha1",
+                            "kind": "KbsConfig",
+                            "displayName": "Kbs Config",
+                            "description": "KbsConfig is the Schema for the kbsconfigs API"
+                        }
+                    ]
+                },
+                "description": "Remote attestation operator for confidential containers",
+                "displayName": "Red Hat build of Trustee",
+                "installModes": [
+                    {
+                        "type": "OwnNamespace",
+                        "supported": true
+                    },
+                    {
+                        "type": "SingleNamespace",
+                        "supported": true
+                    },
+                    {
+                        "type": "MultiNamespace",
+                        "supported": false
+                    },
+                    {
+                        "type": "AllNamespaces",
+                        "supported": false
+                    }
+                ],
+                "keywords": [
+                    "trustee",
+                    "Confidential Computing",
+                    "Attestation"
+                ],
+                "labels": {
+                    "operatorframework.io/arch.amd64": "supported",
+                    "operatorframework.io/arch.s390x": "supported",
+                    "operatorframework.io/os.linux": "supported"
+                },
+                "links": [
+                    {
+                        "name": "Red Hat build of Trustee",
+                        "url": "https://github.com/openshift/trustee-operator"
+                    }
+                ],
+                "maintainers": [
+                    {
+                        "name": "Red Hat",
+                        "email": "support@redhat.com"
+                    }
+                ],
+                "maturity": "beta",
+                "provider": {
+                    "name": "Red Hat",
+                    "url": "https://github.com/confidential-containers"
+                }
+            }
+        }
+    ],
+    "relatedImages": [
+        {
+            "name": "",
+            "image": "registry.redhat.io/build-of-trustee/trustee-operator-bundle@sha256:c6bc928d220fa001e2a7b5e8661a3c8a604c21385dc1bb97b8dd121ca2347916"
+        },
+        {
+            "name": "",
+            "image": "registry.redhat.io/build-of-trustee/trustee-rhel9-operator@sha256:fe8e23de14ad088c79b1bd5e7aab08a1b88a86679effcbf174be81e761bd9d6d"
+        }
+    ]
+}
