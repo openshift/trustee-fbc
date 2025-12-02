@@ -19,6 +19,9 @@ entries:
       - name: trustee-operator.v0.4.2
         replaces: trustee-operator.v0.4.1
         skipRange: '>=0.1.0 <0.2.0'
+      - name: trustee-operator.v0.5.0
+        replaces: trustee-operator.v0.4.2
+        skipRange: '>=0.1.0 <0.5.0'
     name: stable
     package: trustee-operator
     schema: olm.channel
@@ -29,5 +32,7 @@ entries:
   - image: registry.redhat.io/build-of-trustee/trustee-operator-bundle@sha256:6a4583e33d595c560c0618879ac6b3b085b33f55767b08aa80e0a4f44221acd2
     schema: olm.bundle
   - image: registry.redhat.io/build-of-trustee/trustee-operator-bundle@sha256:c6bc928d220fa001e2a7b5e8661a3c8a604c21385dc1bb97b8dd121ca2347916
+    schema: olm.bundle
+  - image: registry.redhat.io/build-of-trustee/trustee-operator-bundle@sha256:f6d57cb8ef36e0ae22ca5e2d04c6f52c133db3eee2d2f5f515712de4d19a9e74
     schema: olm.bundle
 schema: olm.template.basic
