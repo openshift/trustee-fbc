@@ -31,6 +31,11 @@
             "name": "trustee-operator.v0.4.2",
             "replaces": "trustee-operator.v0.4.1",
             "skipRange": ">=0.1.0 <0.2.0"
+        },
+        {
+            "name": "trustee-operator.v0.5.0",
+            "replaces": "trustee-operator.v0.4.2",
+            "skipRange": ">=0.1.0 <0.5.0"
         }
     ]
 }
@@ -511,6 +516,139 @@
         {
             "name": "",
             "image": "registry.redhat.io/build-of-trustee/trustee-rhel9-operator@sha256:fe8e23de14ad088c79b1bd5e7aab08a1b88a86679effcbf174be81e761bd9d6d"
+        }
+    ]
+}
+{
+    "schema": "olm.bundle",
+    "name": "trustee-operator.v1.0.0",
+    "package": "trustee-operator",
+    "image": "registry.redhat.io/build-of-trustee/trustee-operator-bundle@sha256:f6d57cb8ef36e0ae22ca5e2d04c6f52c133db3eee2d2f5f515712de4d19a9e74",
+    "properties": [
+        {
+            "type": "olm.gvk",
+            "value": {
+                "group": "confidentialcontainers.org",
+                "kind": "KbsConfig",
+                "version": "v1alpha1"
+            }
+        },
+        {
+            "type": "olm.gvk",
+            "value": {
+                "group": "confidentialcontainers.org",
+                "kind": "TrusteeConfig",
+                "version": "v1alpha1"
+            }
+        },
+        {
+            "type": "olm.package",
+            "value": {
+                "packageName": "trustee-operator",
+                "version": "1.0.0"
+            }
+        },
+        {
+            "type": "olm.csv.metadata",
+            "value": {
+                "annotations": {
+                    "alm-examples": "[]",
+                    "capabilities": "Basic Install",
+                    "categories": "Security",
+                    "containerImage": "registry.redhat.io/build-of-trustee/trustee-rhel9-operator@sha256:5aaf573a26f62e8e01ab48799c98c2c40337b359077493c8cadc6a7b7ff4c0ce",
+                    "createdAt": "2024-06-07T10:06:06Z",
+                    "features.operators.openshift.io/cnf": "false",
+                    "features.operators.openshift.io/cni": "false",
+                    "features.operators.openshift.io/csi": "false",
+                    "features.operators.openshift.io/disconnected": "true",
+                    "features.operators.openshift.io/fips-compliant": "false",
+                    "features.operators.openshift.io/proxy-aware": "true",
+                    "features.operators.openshift.io/tls-profiles": "false",
+                    "features.operators.openshift.io/token-auth-aws": "false",
+                    "features.operators.openshift.io/token-auth-azure": "false",
+                    "features.operators.openshift.io/token-auth-gcp": "false",
+                    "operatorframework.io/suggested-namespace": "trustee-operator-system",
+                    "operators.openshift.io/valid-subscription": "[\"OpenShift Container Platform\", \"OpenShift Platform Plus\"]",
+                    "operators.operatorframework.io/builder": "operator-sdk-v1.40.0",
+                    "operators.operatorframework.io/project_layout": "go.kubebuilder.io/v4",
+                    "repository": "https://github.com/openshift/trustee-operator",
+                    "support": "Confidential Containers Community"
+                },
+                "apiServiceDefinitions": {},
+                "crdDescriptions": {
+                    "owned": [
+                        {
+                            "name": "kbsconfigs.confidentialcontainers.org",
+                            "version": "v1alpha1",
+                            "kind": "KbsConfig",
+                            "displayName": "Kbs Config",
+                            "description": "KbsConfig is the Schema for the kbsconfigs API"
+                        },
+                        {
+                            "name": "trusteeconfigs.confidentialcontainers.org",
+                            "version": "v1alpha1",
+                            "kind": "TrusteeConfig"
+                        }
+                    ]
+                },
+                "description": "Remote attestation operator for confidential containers",
+                "displayName": "Red Hat build of Trustee",
+                "installModes": [
+                    {
+                        "type": "OwnNamespace",
+                        "supported": true
+                    },
+                    {
+                        "type": "SingleNamespace",
+                        "supported": true
+                    },
+                    {
+                        "type": "MultiNamespace",
+                        "supported": false
+                    },
+                    {
+                        "type": "AllNamespaces",
+                        "supported": false
+                    }
+                ],
+                "keywords": [
+                    "trustee",
+                    "Confidential Computing",
+                    "Attestation"
+                ],
+                "labels": {
+                    "operatorframework.io/arch.amd64": "supported",
+                    "operatorframework.io/arch.s390x": "supported",
+                    "operatorframework.io/os.linux": "supported"
+                },
+                "links": [
+                    {
+                        "name": "Red Hat build of Trustee",
+                        "url": "https://github.com/openshift/trustee-operator"
+                    }
+                ],
+                "maintainers": [
+                    {
+                        "name": "Red Hat",
+                        "email": "support@redhat.com"
+                    }
+                ],
+                "maturity": "beta",
+                "provider": {
+                    "name": "Red Hat",
+                    "url": "https://github.com/confidential-containers"
+                }
+            }
+        }
+    ],
+    "relatedImages": [
+        {
+            "name": "",
+            "image": "registry.redhat.io/build-of-trustee/trustee-operator-bundle@sha256:f6d57cb8ef36e0ae22ca5e2d04c6f52c133db3eee2d2f5f515712de4d19a9e74"
+        },
+        {
+            "name": "",
+            "image": "registry.redhat.io/build-of-trustee/trustee-rhel9-operator@sha256:5aaf573a26f62e8e01ab48799c98c2c40337b359077493c8cadc6a7b7ff4c0ce"
         }
     ]
 }
