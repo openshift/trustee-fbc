@@ -9,7 +9,7 @@ entries:
   - entries:
       - name: trustee-operator.v1.0.0
         replaces: trustee-operator.v0.4.2
-        skipRange: '>=0.1.0 <0.2.0'
+        skipRange: '>=0.1.0 <1.0.0'
     name: stable
     package: trustee-operator
     schema: olm.channel
