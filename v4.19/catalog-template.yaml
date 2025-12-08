@@ -33,6 +33,6 @@ entries:
     schema: olm.bundle
   - image: registry.redhat.io/build-of-trustee/trustee-operator-bundle@sha256:c6bc928d220fa001e2a7b5e8661a3c8a604c21385dc1bb97b8dd121ca2347916
     schema: olm.bundle
-  - image: registry.redhat.io/build-of-trustee/trustee-operator-bundle@sha256:e62a03c42bfce4cd09cf68e28f4164446955a73a83f2d78500cf45b714840941
+  - image: registry.redhat.io/build-of-trustee/trustee-operator-bundle@sha256:2f72205cf81cd26e0c4d7b159e72f567e84e69596aaff92bbf52bdfd2d7b9dd4
     schema: olm.bundle
 schema: olm.template.basic
