@@ -665,7 +665,7 @@
     "schema": "olm.bundle",
     "name": "trustee-operator.v1.1.0",
     "package": "trustee-operator",
-    "image": "registry.redhat.io/build-of-trustee/trustee-operator-bundle@sha256:c120b9c093416aca5f9a1c4ecf0441afefe73a99a841af1cd93de361dc3e9875",
+    "image": "registry.redhat.io/build-of-trustee/trustee-operator-bundle@sha256:66b157541c50c4645a4faa07cf86a2f2a60fa91de2336c0c4cfec36244b4e59c",
     "properties": [
         {
             "type": "olm.gvk",
@@ -697,7 +697,7 @@
                     "alm-examples": "[]",
                     "capabilities": "Basic Install",
                     "categories": "Security",
-                    "containerImage": "registry.redhat.io/build-of-trustee/trustee-rhel9-operator@sha256:692814cdaa4a49617d1a0f4e3fb472a53ffa8ffff2acf28cfa46309e0b4042e9",
+                    "containerImage": "registry.redhat.io/build-of-trustee/trustee-rhel9-operator@sha256:edcad1cd3d310e3352f4a76d3c753133d75e9b8ea2c1853a5622eaa65894d715",
                     "createdAt": "2024-06-07T10:06:06Z",
                     "features.operators.openshift.io/cnf": "false",
                     "features.operators.openshift.io/cni": "false",
@@ -786,15 +786,15 @@
     "relatedImages": [
         {
             "name": "",
-            "image": "registry.redhat.io/build-of-trustee/trustee-operator-bundle@sha256:c120b9c093416aca5f9a1c4ecf0441afefe73a99a841af1cd93de361dc3e9875"
+            "image": "registry.redhat.io/build-of-trustee/trustee-operator-bundle@sha256:66b157541c50c4645a4faa07cf86a2f2a60fa91de2336c0c4cfec36244b4e59c"
         },
         {
             "name": "",
-            "image": "registry.redhat.io/build-of-trustee/trustee-rhel9-operator@sha256:692814cdaa4a49617d1a0f4e3fb472a53ffa8ffff2acf28cfa46309e0b4042e9"
+            "image": "registry.redhat.io/build-of-trustee/trustee-rhel9-operator@sha256:edcad1cd3d310e3352f4a76d3c753133d75e9b8ea2c1853a5622eaa65894d715"
         },
         {
             "name": "trustee",
-            "image": "registry.redhat.io/build-of-trustee/trustee-rhel9@sha256:f72e330f0b5b32caa2f1072e6a5a923ae917c83417eb05d3ce42c4356ce8502f"
+            "image": "registry.redhat.io/build-of-trustee/trustee-rhel9@sha256:cceec0271b6b80828430a213d1010c3a085ee3dbb84a44055196b89d899f54ac"
         }
     ]
 }
