@@ -807,7 +807,7 @@
     "schema": "olm.bundle",
     "name": "trustee-operator.v1.2.0",
     "package": "trustee-operator",
-    "image": "registry.redhat.io/build-of-trustee/trustee-operator-bundle@sha256:bda32eddca3d0be26c80b14a733afa08690408a120b53311966dadce24fb4f2f",
+    "image": "registry.redhat.io/build-of-trustee/trustee-operator-bundle@sha256:8101de5453b3956f9492a1956693fbc2e79aba372de163f3d7a790f2d714066c",
     "properties": [
         {
             "type": "olm.gvk",
@@ -928,7 +928,7 @@
     "relatedImages": [
         {
             "name": "",
-            "image": "registry.redhat.io/build-of-trustee/trustee-operator-bundle@sha256:bda32eddca3d0be26c80b14a733afa08690408a120b53311966dadce24fb4f2f"
+            "image": "registry.redhat.io/build-of-trustee/trustee-operator-bundle@sha256:8101de5453b3956f9492a1956693fbc2e79aba372de163f3d7a790f2d714066c"
         },
         {
             "name": "",
@@ -936,7 +936,7 @@
         },
         {
             "name": "trustee",
-            "image": "registry.redhat.io/build-of-trustee/trustee-rhel9@sha256:9a07b7d547bc6dce3f7e3906a1117554aae9a12c6457cda610ca545c4835243d"
+            "image": "registry.redhat.io/build-of-trustee/trustee-rhel9@sha256:85312d29d6ea7b96396b567c96893ae2527d83b9fc7a459044ba610c98593fae"
         }
     ]
 }
