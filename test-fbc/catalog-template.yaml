@@ -13,6 +13,6 @@ entries:
     name: stable
     package: trustee-operator
     schema: olm.channel
-  - image: registry.redhat.io/build-of-trustee/trustee-operator-bundle@sha256:22e278358fba7ec05bc065411b49b8f7148e4a25afe96de7a601e0b0b980bb42
+  - image: registry.redhat.io/build-of-trustee/trustee-operator-bundle@sha256:8e2eced9966964638830625a25fda0050012ea4886d8ab62b974fec180e0d0b7
     schema: olm.bundle
 schema: olm.template.basic
